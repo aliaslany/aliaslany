@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دیولوپر پلاس | DeveloperPlus</title>
+    <!-- اتصال به فونت وزیرمتن برای نمایش زیبای متن‌های فارسی -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* هدر و ناوبری */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        /* بخش قهرمان (Hero) */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #c5a880;
+            color: #b2bec3;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* استایل مشترک بخش‌ها */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* بخش درباره من */
+        .about-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            text-align: justify;
+        }
+
+        /* بخش خدمات و دوره‌ها */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        /* فوتر و راه‌های ارتباطی */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: var(--primary-color);
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        /* واکنش‌گرایی برای موبایل */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo">DeveloperPlus</div>
+            <ul class="nav-links">
+                <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#about">درباره من</a></li>
+                <li><a href="#services">حوزه‌های تدریس</a></li>
+                <li><a href="#contact">تماس با من</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- بخش قهرمان -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مسیر حرفه‌ای شدن در دنیای برنامه‌نویسی با DeveloperPlus</h1>
+            <p>آموزش تخصصی، پروژه‌محور و گام‌به‌گام توسعه نرم‌افزار از صفر تا ورود به بازار کار و موقعیت‌های ریموت.</p>
+            <a href="#contact" class="btn">شروع یادگیری و مشاوره</a>
+        </div>
+    </section>
+
+    <!-- بخش درباره من -->
+    <section id="about">
+        <h2 class="section-title">درباره من</h2>
+        <div class="about-content">
+            <p>سلام، من علی اصلانی هستم؛ توسعه‌دهنده فول‌استک و مدرس برنامه‌نویسی. سال‌هاست که در دنیای توسعه نرم‌افزار فعالیت دارم و پروژه‌های مختلفی را از ایده تا اجرا هدایت کرده‌ام. هدف من در <strong>DeveloperPlus</strong> این است که تجربیات عملی، چالش‌های واقعی بازار کار و مهارت‌های لازم برای چالش‌های فنی را در قالب آموزش‌های ساده، منسجم و کاربردی به شما منتقل کنم. معتقدم برنامه‌نویسی فقط نوشتن کد نیست، بلکه یادگیری تفکر حل مسئله است.</p>
+        </div>
+    </section>
+
+    <!-- بخش خدمات و دوره‌ها -->
+    <section id="services">
+        <h2 class="section-title">چه چیزهایی را با هم یاد می‌گیریم؟</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Frontend Development</h3>
+                <p>آموزش HTML ،CSS ،JavaScript و فریم‌ورک‌های مدرن برای خلق رابط‌های کاربری جذاب و واکنش‌گرا.</p>
+            </div>
+            <div class="service-card">
+                <h3>Backend Development</h3>
+                <p>طراحی معماری سرور، مدیریت پایگاه داده‌ها و ساخت APIهای امن، بهینه و مقیاس‌پذیر.</p>
+            </div>
+            <div class="service-card">
+                <h3>Full-Stack Mentorship</h3>
+                <p>مربی‌گری اختصاصی و گام‌به‌گام برای هدایت شما از کدهای فرانت‌اند تا منطق بک‌اند و آمادگی برای بازار کار بین‌المللی.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر و راه‌های ارتباطی -->
+    <footer id="contact">
+        <h2>ارتباط با من</h2>
+        <p>آماده‌اید یادگیری را شروع کنید؟ برای کلاس‌های خصوصی، دوره‌های گروهی یا مشاوره با من در تماس باشید.</p>
+        
+        <div class="contact-links">
+            <a href="https://t.me/aliaslanik" target="_blank">تلگرام: @aliaslanik</a>
+            <a href="https://linkedin.com/in/aliaslanik" target="_blank">لینکدین: @aliaslanik</a>
+            <a href="mailto:a77aslani@gmail.com">ایمیل: a77aslani@gmail.com</a>
+        </div>
+
+        <div class="copyright">
+            &copy; ۲۰۲۶ دیولوپر پلاس (DeveloperPlus). تمامی حقوق محفوظ است.
+        </div>
+    </footer>
+
+</body>
+</html>
